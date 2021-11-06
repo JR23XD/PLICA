@@ -15,16 +15,18 @@ class HorarioController extends Controller {
     }
     public function index(Request $request) {
     }
-    public function create() {
+    public function create($id_clase) {
         $clases = Clase::pluck('nom','id');
-        $users = User::pluck('name','id');
-        return view('clases.hor_create', compact('clases','users'));
-        //dd($clase);
+        $alumnos = User::pluck('name','id');
+      
+        return view('clases.hor_create', compact('clases','alumnos','id_clase'));
+        //dd($clases);
         
     }
 
-    public function store(StoreHorarioRequest $request) {
-        $this->horarioRepo->store($request);
+    public function store(StoreHorarioRequest $request , $id_clase ) {
+        $this->horarioRepo->store($request, $id_clase);
+
         toastr()->success('Success Message');
         return back();
     }

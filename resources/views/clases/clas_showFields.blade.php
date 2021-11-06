@@ -8,18 +8,20 @@
             {!! Form::text('nom', $clase->nom, ['class' => 'form-control disabled', 'maxlength' => 0, 'placeholder' => __('Nombre'), 'readonly' => 'readonly']) !!}
         </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="form-group col-sm btn-sm">
-        <label for="tip">{{ __('Tipo de clase') }}</label>
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-object-group"></i></span>
-            </div>
-            {!! Form::text('tip', $clase->tip,['class' => 'form-control disabled', 'maxlength' => 0, 'placeholder' => __('Tipo de Clase'), 'readonly' => 'readonly']) !!}
+
+<div class="form-group col-sm btn-sm">
+    <label for="user">{{ __('Profesor') }} *</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-dice-six"></i></span>
         </div>
-    </div>
+        @foreach ($clase->users as $user)
+          {!! Form::text('user',$user->name, ['class' => 'form-control disabled' , 'maxlength' => 0, 'placeholder' => __('Profesor'), 'readonly' => 'readonly']) !!}
+        @endforeach
+        </div>
+    <span class="text-danger">{{ $errors->first('user') }}</span>
+  </div>
 </div>
 
 <div class="row">

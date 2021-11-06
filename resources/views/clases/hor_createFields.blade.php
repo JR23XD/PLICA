@@ -5,7 +5,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-dice-six"></i></span>
         </div>
-          {!! Form::select('user[]', $users, null, ['class' => 'form-control select2' . ($errors->has('user') ? ' is-invalid' : ''), 'multiple']) !!}
+          {!! Form::select('user[]', $alumnos, null, ['class' => 'form-control select2' . ($errors->has('user') ? ' is-invalid' : ''), 'multiple']) !!}
       </div>
     <span class="text-danger">{{ $errors->first('user') }}</span>
   </div>

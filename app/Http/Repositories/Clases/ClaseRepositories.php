@@ -15,14 +15,15 @@ class ClaseRepositories implements ClaseInterface {
     $clase= new Clase;
     $clase->nom=$request->nom;
     $clase->save();
+    $clase->users()->sync($request->user);
     
     return $clase;
   }
   public function update($request, $id_clase) {
   $clase = $this->getClase($id_clase);
+  $clase->save();
   $clase->users()->sync($request->user);
   $clase->horarios()->sync($request->horario);
-  $clase->save();
 
   }
   public function delete($id_clase) {

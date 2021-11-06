@@ -1,6 +1,3 @@
-<td width="1rem" title="Editar:{{$horario->id}}"> 
-  <a href="{{ route('horarios.edit', $horario->id) }}" class='btn btn-light btn-sm'><i class="fas fa-edit"></i></a>
-</td>
 <td width="1rem" title="Eliminar: {{ $horario->id }}">
   <form method="post" action="{{ route('horarios.destroy', $horario->id) }}" id="horarioDestroy{{ $horario->id}}">
       @method('DELETE')@csrf

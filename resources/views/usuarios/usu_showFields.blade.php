@@ -85,7 +85,6 @@
             <tr title="{{$clase->id}}">
                 <td with="1rem">{{$clase->id}}</td>
                 <td><a href="{{ route('clases.show', $clase->id) }}" title="Detalles: {{ $clase->id }}">{{ $clase->nom }}</a></td>
-                <td>@foreach ($clase->horarios as $horario)</td>
             </tr>
           @endforeach
         </tbody>

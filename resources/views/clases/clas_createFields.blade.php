@@ -9,6 +9,18 @@
     </div>
     <span class="text-danger">{{ $errors->first('nom') }}</span>
   </div>
+
+  <div class="form-group col-sm btn-sm">
+    <label for="user">{{ __('Profesor') }} *</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-dice-six"></i></span>
+        </div>
+          {!! Form::select('user[]', $users, null, ['class' => 'form-control' . ($errors->has('user') ? ' is-invalid' : ''),]) !!}
+      </div>
+    <span class="text-danger">{{ $errors->first('user') }}</span>
+  </div>
+
 </div>
 <div class="row">
     <div class="form-group col-sm btn-sm">

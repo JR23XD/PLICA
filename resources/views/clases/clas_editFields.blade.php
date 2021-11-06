@@ -1,10 +1,9 @@
 <div class="row">
   <div class="card-body table-responsive p-0" id="div-tabla-scrollbar" style="height: 40em;">
       <table class="table table-head-fixed table-striped table-hover table-sm table-bordered y">
-          <thead></thead>
           <thead>
               <tr>
-                  <th colspan="7" > <a href="{{route('horarios.create')}}"><center>{{ __('Horarios')}} </center></a></th>
+                  <th colspan="7" > <a href="{{route('horarios.create',[$clase->id])}}"><center>{{ __('Horarios')}} </center></a></th>
               </tr>
             <tr>
                 <th>{{ __('ID')}}</th>
@@ -38,9 +37,10 @@
 
 
 
+
+</div>
 <div class="form-group col-sm btn-sm">
     <button type="submit" id="btnsubmit" class="btn btn-info w-100 p-2"
         onclick="return check('btnsubmit', 'claseUpdate', '¡Alerta!', '¿Estás seguro quieres actualizar el registro?', 'info', 'Continuar', 'Cancelar', 'false');"><i
             class="fas fa-save"></i> {{ __('Guardar') }}</button>
-</div>
 </div>

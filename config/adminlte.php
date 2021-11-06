@@ -308,17 +308,18 @@ return [
             'can'=>   ['clases.create','clases.show','clases.edit','clases.destroy'],     
             'submenu' => [
                 [
-                    'text' => 'Lista de Clases',
-                    'icon' => 'fas fa-list-ul',
-                    'route'  => 'clases.index',
-                    'can'=>   ['clases.create','clases.show','clases.edit','clases.destroy'], 
-                ],
-                [
                     'text' => 'Registrar Clases',
                     'icon' => 'fas fa-plus-square',
                     'route'  => 'clases.create',
                     'can' => 'clases.create',
                 ],
+                [
+                    'text' => 'Lista de Clases',
+                    'icon' => 'fas fa-list-ul',
+                    'route'  => 'clases.index',
+                    'can'=>   ['clases.create','clases.show','clases.edit','clases.destroy'], 
+                ],
+                
             ],
         ],
         [

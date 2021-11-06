@@ -18,5 +18,7 @@ class Horario extends Model
     public function clases() {
       return $this->belongsToMany('App\Models\Clase', 'clase_horario');
     }
-    
+    public function users() {
+      return $this->belongsToMany('App\Models\User', 'user_horario');
+    }
 }
