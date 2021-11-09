@@ -8,10 +8,10 @@ class UpdateHorarioRequest extends FormRequest {
   }
   public function rules() {
     return [
-      'fhi' => 'required|max:40|string',
-      'fhf' => 'required|max:40|string',
-      'mod' => 'required|max:40|string',
-      'tip' => 'required|max:40|string',
+      'fhi' => 'required|max:20|numeric',
+      'fhf' => 'required|max:20|numeric',
+      'mod' => 'required|max:10|string',
+      'tip' => 'required|max:10|string',
         
       
     ];

@@ -20,7 +20,7 @@ class HorarioRepositories implements HorarioInterface {
     $horario->tip=$request->tip;
     $horario->save();
     $horario->clases()->sync($id_clase);
-    
+    $horario->users()->sync($request->user);
     return $horario;
   }
   public function update($request, $id_horario) {

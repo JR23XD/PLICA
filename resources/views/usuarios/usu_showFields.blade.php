@@ -71,22 +71,30 @@
           <thead></thead>
           <thead>
               <tr>
-                  <th colspan="4" ><center>{{ __('Clase(s)')}}</center></th>
+                  <th colspan="7" ><center>{{ __('Clase(s)')}}</center></th>
               </tr>
             <tr>
                 <th>{{ __('ID')}}</th>
-                <th>{{ __('Nombre')}}</th>
-                <th>{{ __('Modalidad')}}</th>
+                <th>{{ __('Clase')}}</th>
+                <th>{{ __('Inicio')}}</th>
+                <th>{{ __('Fin')}}</th>
                 <th>{{ __('Tipo de Clase')}}</th>
+                <th>{{ __('Modalidad')}}</th>
             </tr>
         </thead>
         <tbody>
-          @foreach ($usuario->clases as $clase)
-            <tr title="{{$clase->id}}">
-                <td with="1rem">{{$clase->id}}</td>
-                <td><a href="{{ route('clases.show', $clase->id) }}" title="Detalles: {{ $clase->id }}">{{ $clase->nom }}</a></td>
+          
+            <tr>
+              <td></td>
+              <td></td>
+              @foreach ($usuario->horarios as $horario)
+                <td>{{$horario->fhi }}</td>
+                <td>{{$horario->fhf}}</td>
+                <td>{{$horario->tip}}</td>
+                <td>{{$horario->mod}}</td>
+                @endforeach
             </tr>
-          @endforeach
+         
         </tbody>
         </table>
       </div>

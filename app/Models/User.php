@@ -105,5 +105,8 @@ public function scopeBuscar($query, $buscador){
       }
       public function users_clases() {
         return $this->belongsToMany('App\Models\User_Clase', 'modalidad_clase');
-      } 
+      }
+      public function horarios() {
+        return $this->belongsToMany('App\Models\Horario', 'user_horario');
+      }
 }

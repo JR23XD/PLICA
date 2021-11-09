@@ -29,15 +29,6 @@
         </table>
       </div>
   </div>
-  
-
-
-
-
-
-
-
-
 </div>
 <div class="form-group col-sm btn-sm">
     <button type="submit" id="btnsubmit" class="btn btn-info w-100 p-2"

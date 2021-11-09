@@ -24,7 +24,7 @@ class HorarioController extends Controller {
         
     }
 
-    public function store(StoreHorarioRequest $request , $id_clase ) {
+    public function store(StoreHorarioRequest $request , $id_clase) {
         $this->horarioRepo->store($request, $id_clase);
 
         toastr()->success('Success Message');
