@@ -1,3 +1,4 @@
+@can(['usuarios.create', 'usuarios.show', 'usuarios.edit', 'usuarios.destroy'])
 <div class="row">
   <div class="form-group col-sm btn-sm">
     <label for="user">{{ __('Alumno') }} *</label>
@@ -10,6 +11,7 @@
     <span class="text-danger">{{ $errors->first('user') }}</span>
   </div>
 </div>
+@endcan
 
 <div class="row">
   <div class="form-group col-sm btn-sm">
