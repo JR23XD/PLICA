@@ -49,11 +49,6 @@ class UsuarioRepositories implements UsuarioInterface {
     $usuario->clases()->sync($request->clase);
     $usuario->modalidads()->sync($request->modalidad);
     return $usuario;
-    $caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#%&()_-+=[}]<>/';
-      $nueva_password = '';
-      for ($i = 0; $i <config('app.longitud_del_password') ; $i++) { // Variable "longitud_del_password" definida en el archivo .env
-        $nueva_password .= $caracteres[rand(0, strlen($caracteres) - 1)];
-      }
   }
   public function update($request, $id_usuario) {
     $usuario=$this->getUsuario($id_usuario);
@@ -61,9 +56,6 @@ class UsuarioRepositories implements UsuarioInterface {
     $usuario->name=$request->name;
     $usuario->apes=$request->apes;
     $usuario->save();
-    $usuario->roles()->sync($request->rol);
-    $usuario->clases()->sync($request->clase);
-    $usuario->modalidads()->sync($request->modalidad);
   }
   public function delete($id_usuario) {  
     $usuario = $this->getUsuario($id_usuario);

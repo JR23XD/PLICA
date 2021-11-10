@@ -74,30 +74,6 @@
     </div>
     <span class="text-danger">{{ $errors->first('rol') }}</span>
   </div>
-
-  <div class="form-group col-sm btn-sm">
-    <label for="clase">{{ __('Clase') }} *</label>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fas fa-pencil-ruler"></i></span>
-      </div>
-      {!! Form::select('clase[]', $clases, null, ['class' => 'form-control select2' . ($errors->has('clase') ? ' is-invalid' : ''), 'multiple']) !!}
-    </div>
-    <span class="text-danger">{{ $errors->first('clase') }}</span>
-  </div>
-
-  <div class="form-group col-sm btn-sm">
-    <label for="modalidad">{{ __('Modalidad') }} *</label>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><i class="fas fa-object-group"></i></span>
-      </div>
-      {!! Form::select('modalidad[]', $modalidads, null, ['class' => 'form-control select2' . ($errors->has('modalidad') ? ' is-invalid' : ''),'multiple']) !!}
-    </div>
-    <span class="text-danger">{{ $errors->first('modalidad') }}</span>
-  </div>
-  
-
 </div>
 
 

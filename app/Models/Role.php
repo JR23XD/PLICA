@@ -14,6 +14,6 @@ class Role extends Model
     protected $dates = ['deleted_at'];
     
     public function users() {
-        return $this->belongsToMany('App\Models\User', 'user_clase');
+        return $this->belongsToMany('App\Models\User', 'user_role');
       }
 }

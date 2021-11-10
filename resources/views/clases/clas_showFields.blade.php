@@ -25,26 +25,32 @@
 </div>
 
 <div class="row">
-<div class="card-body table-responsive p-0" id="div-tabla-scrollbar" style="height: 40em;">
-    <table class="table table-head-fixed table-striped table-hover table-sm table-bordered y">
-        <thead></thead>
-        <thead>
+  <div class="card-body table-responsive p-0" id="div-tabla-scrollbar" style="height: 40em;">
+      <table class="table table-head-fixed table-striped table-hover table-sm table-bordered y">
+          <thead>
+              <tr>
+                  <th colspan="7" ><center>{{ __('Horarios')}} </center></th>
+              </tr>
             <tr>
-                <th colspan="2" ><center>{{ __('Alumno(s)')}}</center></th>
+                <th>{{ __('ID')}}</th>
+                <th>{{ __('Inicio')}}</th>
+                <th>{{ __('Fin')}}</th>
+                <th>{{ __('Tipo de Clase')}}</th>
+                <th>{{ __('Modalidad')}}</th>
             </tr>
-          <tr>
-              <th>{{ __('ID')}}</th>
-              <th>{{ __('Nombre')}}</th>
-          </tr>
-      </thead>
-      <tbody>
-        @foreach ($clase->users as $user)
-          <tr title="{{$user->id}}">
-              <td with="1rem">{{$user->id}}</td>
-              <td><a href="{{ route('usuarios.show', $user->id) }}" title="Detalles: {{ $user->id }}">{{ $user->name }}</a></td>
-          </tr>
-        @endforeach
-      </tbody>
-      </table>
-    </div>
+        </thead>
+        <tbody>
+          @foreach ($clase->horarios as $horario)
+          <tr title="{{$horario->id}}">
+          <td with="1rem">{{$horario->id}}</td>
+          <td>{{ $horario->fhi }}</td>
+          <td>{{ $horario->fhf }}</td>
+          <td>{{ $horario->tip }}</td>
+          <td>{{ $horario->mod}}</td>
+           </tr>
+           @endforeach
+        </tbody>
+        </table>
+      </div>
+  </div>
 </div>
